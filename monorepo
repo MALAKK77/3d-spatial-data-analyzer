@@ -1,0 +1,14 @@
+mkdir 3d-visual-analyzer && cd 3d-visual-analyzer
+
+# Setup Backend
+mkdir backend && cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install fastapi uvicorn trimesh scikit-learn numpy python-multipart
+cd ..
+
+# Setup Frontend
+npx create-next-app@latest frontend --typescript --tailwind --eslint --app --use-npm
+cd frontend
+npm install three @react-three/fiber @react-three/drei zustand lucide-react
+npm install -D @types/three
